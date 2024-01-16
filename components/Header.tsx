@@ -5,11 +5,12 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+
 const Header = () => {
 
   const [isScrolled, setIsScrolled ] = useState(false)
 
-  useEffect(()=>{ //understand this shit, useEffect, what does mounting mean, and the lamda functions
+  useEffect(()=>{ //understand this shit, useEffect, what does mounting mean, 
     const handleScroll = () => {
         if (window.scrollY > 0 ){
             setIsScrolled(true)
@@ -61,3 +62,4 @@ const Header = () => {
 };
 
 export default Header;
+
