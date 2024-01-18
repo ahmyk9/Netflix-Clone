@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import { baseUrl } from "../constants/movie";
 import { FaPlay } from "react-icons/fa";
 import { InformationCircle } from "heroicons-react";
+import { Movie } from "../typings";
 
 
 //wtf is the interface shit // interface's only typescript and it allows for easy readbility and allows for certain parts of object to be used
