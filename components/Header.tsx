@@ -3,28 +3,26 @@ import {
   BellIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
+import {useEffect, useState} from "react";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const [isScrolled, setIsScrolled ] = useState(false)
-
-  useEffect(()=>{ //understand this shit, useEffect, what does mounting mean, 
+  useEffect(() => {
+    //understand this shit, useEffect, what does mounting mean,
     const handleScroll = () => {
-        if (window.scrollY > 0 ){
-            setIsScrolled(true)
-        }
-        else{
-            setIsScrolled(false) 
-        }
-    }
-    window.addEventListener("scroll", handleScroll) //understand this shit
-    
-    return ()=>{
-        window.removeEventListener("scroll", handleScroll) //understand this shit
-    }
-  }, []) //understand this shit, why the brackets 
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll); //understand this shit
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); //understand this shit
+    };
+  }, []); //understand this shit, why the brackets
 
   return (
     <header className={`${isScrolled && "bg-[#141414]"}`}>
@@ -62,4 +60,3 @@ const Header = () => {
 };
 
 export default Header;
-

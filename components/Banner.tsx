@@ -5,9 +5,9 @@ import { FaPlay } from "react-icons/fa";
 import { InformationCircle } from "heroicons-react";
 
 
-//wtf is the interface shit
+//wtf is the interface shit // interface's only typescript and it allows for easy readbility and allows for certain parts of object to be used
 interface Props {
-  netflixOriginals: Movie[];
+  netflixOriginals: Movie[]; //netflixOriginals is the variable that holds the Movie array and to access Movies, u use netflixOrinals
 }
 
 function Banner({netflixOriginals}: Props) { //wtf is this props shit 
