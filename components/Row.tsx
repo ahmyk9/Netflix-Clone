@@ -2,6 +2,7 @@ import {ChevronLeftIcon} from "@heroicons/react/24/outline";
 import {ChevronRightIcon} from "@heroicons/react/24/outline";
 import React, {useRef, useState} from "react";
 import Thumbnail from "./Thumbnail";
+import { Movie } from "../typings";
 
 interface Props {
   title: string;
