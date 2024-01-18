@@ -48,7 +48,7 @@ const Header = () => {
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className=" h-6 w-6"></BellIcon>
         <Link href={"/account"}>
-          <img
+          <Image
             src="https://rb.gy/g1pwyx"
             alt=""
             className="cursor-pointer rounded"
