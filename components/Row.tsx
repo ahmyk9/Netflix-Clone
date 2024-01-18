@@ -2,7 +2,7 @@ import {ChevronLeftIcon} from "@heroicons/react/24/outline";
 import {ChevronRightIcon} from "@heroicons/react/24/outline";
 import React, {useRef, useState} from "react";
 import Thumbnail from "./Thumbnail";
-import { Movie } from "../typings";
+import {Movie} from "../typings";
 
 interface Props {
   title: string;
@@ -15,9 +15,7 @@ function Row({title, movies}: Props) {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
-
-  const handleClick = (direction : string) => {
-  
+  const handleClick = (direction: string) => {
     setIsMoved(true);
 
     if (rowRef.current) {
@@ -26,11 +24,11 @@ function Row({title, movies}: Props) {
       const scrollTo =
         direction === "left"
           ? scrollLeft - clientWidth
-          : scrollLeft + clientWidth
+          : scrollLeft + clientWidth;
 
-          rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"}) //2.15.43
+      rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"}); //2.15.43
     }
-  }
+  };
 
   return (
     <div className="h-40 space-y-0.5 md:space-y-2">
@@ -42,23 +40,27 @@ function Row({title, movies}: Props) {
       <div className="group relative md:-ml-2">
         <ChevronLeftIcon
           className={`absolute top-0  bottom-0 left-2 z-40 m-auto h-9 w-9
-          cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved && "hidden"} `}
+          cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
+            !isMoved && "hidden"
+          } `}
           onClick={() => handleClick("left")}></ChevronLeftIcon>
 
         <div
           ref={rowRef}
           className="flex scrollbar-hide items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
-          {movies.map((movie) => (
-            <Thumbnail key={movie.id} movie={movie}></Thumbnail>
-          ))}
+          {movies && movies.length > 0 ? (
+            movies.map((movie) => (
+              <Thumbnail key={movie.id} movie={movie}></Thumbnail>
+            ))
+          ) : (
+            <p>No movies available</p>
+          )}
         </div>
 
         <ChevronRightIcon
           className={`absolute top-0  bottom-0 right-2 z-40 m-auto h-9 w-9
           cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100`}
           onClick={() => handleClick("right")}></ChevronRightIcon>
-
-          
       </div>
     </div>
   );
