@@ -2,12 +2,14 @@ import {
   MagnifyingGlassIcon as SearchIcon,
   BellIcon,
 } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
+  const { logout } = useAuth()
 
   useEffect(() => {
     //understand this shit, useEffect, what does mounting mean,
