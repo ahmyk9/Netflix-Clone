@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header className={`${isScrolled && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
-      <img
+      <Image
           src="https://rb.gy/ulxxee"
           width={100}
           height={100}

@@ -41,7 +41,7 @@ function Login() {
         layout="fill"
         className="-z-10 !hidden opacity-60 sm:!inline"
         objectFit="cover"
-        alt={""}
+        alt={"login"}
       />
 
       <img
